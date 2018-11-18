@@ -17,6 +17,17 @@ input[type=text], select, textarea {
     resize: vertical;
 }
 
+input[type=email], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
 input[type=submit] {
     background-color: #4CAF50;
     color: white;
@@ -45,13 +56,13 @@ input[type=submit]:hover {
   <form action="{% url 'form' %}" method="POST">
         {% csrf_token %}
     <label for="fname">First Name</label>
-    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+    <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
 
     <label for="lname">Last Name</label>
-    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+    <input type="text" id="lname" name="lastname" placeholder="Your last name.." required >
 
-    <label for="lname">Email</label>
-    <input type="text" id="lname" name="email" placeholder="Your email..">
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" placeholder="Your email.." >
 
     
     <label for="subject">Subject</label>
